@@ -1,0 +1,1262 @@
+/* Dashboard animations */
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Professional Dashboard Card Styling */
+.dashboard-card-professional {
+  border-radius: 12px;
+  border: 1px solid #e9ecef;
+  background: linear-gradient(135deg, #f8fafb 0%, #ffffff 100%);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.dashboard-card-professional:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+  border-color: #d4e5ff;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafb 100%);
+}
+
+.dashboard-card-professional .card-icon {
+  animation: icon-hover 0.3s ease forwards;
+}
+
+.dashboard-card-professional:hover .card-icon {
+  transform: scale(1.15) rotate(-8deg);
+  filter: brightness(1.1);
+}
+
+@keyframes icon-hover {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  100% {
+    transform: scale(1.15) rotate(-8deg);
+  }
+}
+
+/* Dashboard card hover effects */
+.card {
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+/* Apply subtle gradient to commonly used boxed cards */
+.card.border-0.shadow-sm.h-100 {
+  background: linear-gradient(135deg, #f8fafb 0%, #ffffff 100%);
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Button hover effects */
+.btn {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Admin Dashboard Button Responsiveness */
+.btn.text-nowrap {
+  transition: all 0.2s ease-in-out;
+}
+
+.btn.text-nowrap:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Dashboard card loading placeholder */
+.placeholder {
+  opacity: 0.5;
+  animation: placeholder-wave 1.5s ease-in-out infinite;
+}
+
+@keyframes placeholder-wave {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+/* Responsive breakpoints for buttons */
+@media (max-width: 1199.98px) {
+  /* Large screens: 2x2 grid */
+  .col-xl-3.col-lg-6 {
+    margin-bottom: 0.75rem;
+  }
+}
+
+@media (max-width: 991.98px) {
+  /* Medium screens: 2x2 grid */
+  .col-lg-6.col-md-6 {
+    margin-bottom: 0.75rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  /* Small screens: 2x2 grid with shorter text */
+  .col-md-6.col-sm-6 {
+    margin-bottom: 0.75rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  /* Extra small screens: 1 column */
+  .col-12 {
+    margin-bottom: 0.75rem;
+  }
+
+  /* Allow text wrapping on very small screens */
+  .btn.text-nowrap {
+    white-space: normal;
+    line-height: 1.2;
+  }
+
+  /* Adjust button height for mobile */
+  .btn[style*="minHeight"] {
+    min-height: 44px !important;
+    padding: 8px 10px !important;
+  }
+
+  /* Stack icon and text on very small screens if needed */
+  .btn .bi {
+    margin-right: 0.25rem !important;
+  }
+}
+
+/* Ensure equal heights across the row */
+.row .btn {
+  height: auto;
+  min-height: 48px;
+}
+
+/* Badge styling */
+.btn .badge {
+  font-size: 0.7rem;
+  padding: 0.25em 0.5em;
+}
+
+/* Override pagination theme: force white background instead of dark/black */
+.pagination {
+  --pagination-bg: #ffffff !important;
+  --pagination-color: #0d6efd !important;
+  --pagination-border-color: #dee2e6 !important;
+  --pagination-hover-bg: #e9ecef !important;
+  --pagination-hover-color: #0d6efd !important;
+  --pagination-active-bg: #0d6efd !important;
+  --pagination-active-color: #ffffff !important;
+}
+
+.pagination .page-link {
+  background-clip: padding-box;
+}
+
+/* Strong overrides to ensure pagination buttons render white (override theme variables) */
+.pagination .page-link {
+  background-color: #ffffff !important;
+  color: #212529 !important;
+  border: 1px solid #dee2e6 !important;
+  box-shadow: none !important;
+}
+
+.pagination .page-link:hover {
+  background-color: #e9ecef !important;
+  color: #0d6efd !important;
+  border-color: #dee2e6 !important;
+}
+
+.pagination .active > .page-link {
+  background-color: #0d6efd !important;
+  color: #ffffff !important;
+  border-color: #0d6efd !important;
+}
+
+.pagination .disabled > .page-link {
+  background-color: #ffffff !important;
+  color: #6c757d !important;
+  border-color: #dee2e6 !important;
+}
+
+/* Make pagination buttons slightly larger and rounded to match design */
+.pagination .page-link {
+  border-radius: 8px !important;
+  padding: 0.6rem 0.7rem !important;
+}
+
+/* ========================================
+   PROFESSIONAL ADMIN DASHBOARD STYLING
+   ======================================== */
+
+/* Admin Dashboard Container */
+.admin-dashboard-container {
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  min-height: 100%;
+}
+
+/* Welcome Section */
+.admin-welcome-section {
+  border-bottom: 1px solid #e9ecef;
+  padding-bottom: 1.5rem;
+}
+
+.admin-welcome-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #212529;
+  letter-spacing: -0.5px;
+}
+
+.admin-welcome-subtitle {
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+}
+
+.admin-error-alert {
+  max-width: 100%;
+  border-radius: 8px;
+  border: 1px solid #fff3cd;
+  background-color: #fffbee;
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* Dashboard Card Styles */
+.admin-dashboard-card {
+  border-radius: 12px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  background: #ffffff;
+}
+
+.admin-dashboard-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.admin-dashboard-card .card-body {
+  padding: 1.75rem;
+}
+
+.admin-card-icon {
+  transition: all 0.3s ease;
+  background-clip: padding-box;
+}
+
+.admin-dashboard-card:hover .admin-card-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* Admin Card Styling */
+.admin-card {
+  border-radius: 12px;
+  border: 1px solid #e9ecef;
+  /* Use same light gradient for admin cards */
+  background: linear-gradient(135deg, #f8fafb 0%, #ffffff 100%);
+  transition: all 0.3s ease;
+}
+
+.admin-card:hover {
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafb 100%);
+}
+
+.admin-card-header-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #e7f1ff;
+  transition: all 0.3s ease;
+}
+
+.admin-card:hover .admin-card-header-icon {
+  transform: scale(1.1);
+  background: #d4e5ff;
+}
+
+.admin-card .card-header {
+  border-bottom: 1px solid #e9ecef;
+  /* keep header transparent so gradient is continuous */
+  background-color: transparent;
+  padding: 1.5rem 2rem;
+}
+
+.admin-card .card-body {
+  padding: 2rem;
+}
+
+/* Admin Action Buttons */
+.admin-action-btn {
+  min-height: 56px;
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.3px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 2px solid;
+  white-space: normal;
+  line-height: 1.4;
+  position: relative;
+  overflow: hidden;
+}
+
+.admin-action-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+  z-index: 0;
+}
+
+.admin-action-btn:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.admin-action-btn i {
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.admin-action-btn span {
+  position: relative;
+  z-index: 1;
+}
+
+.admin-action-btn:hover {
+  transform: translateY(-2px);
+}
+
+.admin-action-btn.btn-primary:hover,
+.admin-action-btn.btn-outline-primary:hover {
+  box-shadow: 0 6px 20px rgba(13, 110, 253, 0.3);
+}
+
+.admin-action-btn.btn-outline-info:hover {
+  box-shadow: 0 6px 20px rgba(23, 162, 184, 0.3);
+}
+
+.admin-action-btn.btn-outline-success:hover {
+  box-shadow: 0 6px 20px rgba(40, 167, 69, 0.3);
+}
+
+/* Admin Stat Box */
+.admin-stat-box {
+  border-radius: 12px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  border: 1px solid #e9ecef;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.admin-stat-box::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(13, 110, 253, 0.08) 0%, transparent 70%);
+  z-index: 0;
+}
+
+.admin-stat-box {
+  position: relative;
+}
+
+.admin-stat-box > * {
+  position: relative;
+  z-index: 1;
+}
+
+.admin-stat-box:hover {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.admin-stat-icon {
+  width: 56px;
+  height: 56px;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.admin-stat-box:hover .admin-stat-icon {
+  transform: scale(1.1);
+}
+
+/* Responsive Design for Admin Dashboard */
+@media (max-width: 1199.98px) {
+  .admin-welcome-title {
+    font-size: 1.75rem;
+  }
+  
+  .admin-action-btn {
+    min-height: 52px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .admin-welcome-section {
+    margin-bottom: 1.5rem;
+  }
+  
+  .admin-card .card-body {
+    padding: 1.5rem;
+  }
+  
+  .admin-stat-box {
+    padding: 1.5rem !important;
+  }
+  
+  .admin-action-btn {
+    min-height: 48px;
+    padding: 0.65rem 1rem;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .admin-dashboard-container {
+    padding-top: 1rem;
+  }
+  
+  .admin-welcome-title {
+    font-size: 1.5rem;
+  }
+  
+  .admin-welcome-subtitle {
+    font-size: 0.9rem;
+  }
+  
+  .admin-dashboard-card .card-body {
+    padding: 1.25rem;
+  }
+  
+  .admin-card .card-header {
+    padding: 1.25rem 1rem;
+  }
+  
+  .admin-card .card-body {
+    padding: 1.25rem;
+  }
+  
+  .admin-action-btn {
+    min-height: 46px;
+    padding: 0.6rem 0.75rem;
+    font-size: 0.8rem;
+  }
+  
+  .admin-action-btn i {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .admin-welcome-section {
+    text-align: center;
+    padding-bottom: 1.25rem;
+  }
+  
+  .admin-welcome-title {
+    font-size: 1.25rem;
+  }
+  
+  .admin-welcome-subtitle {
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+  }
+  
+  .admin-error-alert {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .admin-action-btn {
+    min-height: 44px;
+    padding: 0.55rem 0.65rem;
+    font-size: 0.75rem;
+  }
+  
+  .admin-action-btn i {
+    margin-right: 0.4rem !important;
+  }
+  
+  .admin-stat-box {
+    padding: 1rem !important;
+  }
+  
+  .admin-stat-box > div {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .admin-stat-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 0.75rem;
+    margin-right: 0 !important;
+  }
+}
+
+/* Loading and disabled states */
+.admin-action-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.admin-action-btn:disabled:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+/* Focus states for accessibility */
+.admin-action-btn:focus,
+.admin-card:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.25);
+}
+
+/* Mini Chart Styling for System Overview */
+.mini-chart svg {
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.08));
+  transition: all 0.3s ease;
+}
+
+.admin-stat-box:hover .mini-chart svg {
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.15));
+  transform: scale(1.05);
+}
+
+/* Professional System Overview Cards */
+/* System Overview Section */
+.system-overview-section {
+  margin-top: 2rem;
+}
+
+.system-overview-section h5 {
+  font-size: 1.25rem;
+  color: #212529;
+}
+
+.overview-item-box {
+  border: 1px solid #e9ecef;
+  border-radius: 16px;
+  /* Match the light gradient used by other dashboard cards */
+  background: linear-gradient(135deg, #f8fafb 0%, #ffffff 100%);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.overview-item-box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+  border-color: #d4e5ff;
+  /* invert gradient subtly on hover for a gentle highlight */
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafb 100%);
+}
+
+.overview-icon-circle {
+  flex-shrink: 0;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.overview-item-box:hover .overview-icon-circle {
+  transform: scale(1.1) rotate(-6deg);
+  filter: brightness(1.15);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .overview-item-box {
+    padding: 1.5rem !important;
+  }
+  
+  .overview-item-box h3 {
+    font-size: 1.75rem !important;
+  }
+}
+
+.system-overview-card {
+  border: 1px solid #e9ecef;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #f8fafb 0%, #ffffff 100%);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.system-overview-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+  border-color: #d4e5ff;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafb 100%);
+}
+
+.system-overview-icon {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.system-overview-card:hover .system-overview-icon {
+  transform: scale(1.12) rotate(-6deg);
+  filter: brightness(1.15);
+}
+
+/* Animation for spinner */
+@keyframes spin-smooth {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.admin-dashboard-container .spin {
+  animation: spin-smooth 1s linear infinite;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ================= Admin Sidebar ================= */
+.sidebar-admin {
+  width: 70px;
+  transition: width 0.25s ease;
+  overflow: hidden;
+  background: #fff;
+  min-height: 100vh;
+  border-right: 1px solid #e5e5e5;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Hover expand */
+.sidebar-admin:hover {
+  width: 230px;
+}
+
+/* Logo */
+.sidebar-admin .sidebar-logo-img {
+  width: 40px;
+  transition: all 0.3s ease;
+}
+
+.sidebar-admin:hover .sidebar-logo-img {
+  width: 120px;
+}
+
+/* Nav Links */
+.sidebar-admin .nav-link {
+  display: flex;
+  align-items: center;
+  padding: 12px 15px;
+  font-size: 15px;
+  white-space: nowrap;
+}
+
+.sidebar-admin .nav-link i {
+  font-size: 20px;
+  min-width: 28px;
+  text-align: center;
+}
+
+.sidebar-admin .link-text {
+  opacity: 0;
+  margin-left: 10px;
+  transition: opacity 0.25s ease;
+}
+
+.sidebar-admin:hover .link-text {
+  opacity: 1;
+}
+
+/* Active link */
+.sidebar-admin .nav-link.active {
+  background: #e8f0ff;
+  font-weight: 600;
+}
+
+/* Scrollable area */
+.sidebar-admin-scroll {
+  height: calc(100vh - 80px);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Scrollbar Admin */
+.sidebar-admin-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+.sidebar-admin-scroll::-webkit-scrollbar-track {
+  background: #f2f2f2;
+}
+.sidebar-admin-scroll::-webkit-scrollbar-thumb {
+  background: #d0d0d0;
+  border-radius: 10px;
+}
+.sidebar-admin-scroll::-webkit-scrollbar-thumb:hover {
+  background: #b5b5b5;
+}
+
+/* Firefox scrollbar */
+.sidebar-admin-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #d0d0d0 #f2f2f2;
+}
+
+
+/* ================= Organization Sidebar ================= */
+.sidebar-org {
+  width: 70px;
+  transition: width 0.25s ease;
+  overflow: hidden;
+  background: #fff;
+  min-height: 100vh;
+  border-right: 1px solid #e5e5e5;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Hover expand */
+.sidebar-org:hover {
+  width: 230px;
+}
+
+/* Logo */
+.sidebar-org .sidebar-logo-img {
+  width: 40px;
+  transition: all 0.3s ease;
+}
+
+.sidebar-org:hover .sidebar-logo-img {
+  width: 120px;
+}
+
+/* Nav Links */
+.sidebar-org .nav-link {
+  display: flex;
+  align-items: center;
+  padding: 12px 15px;
+  font-size: 15px;
+  white-space: nowrap;
+}
+
+.sidebar-org .nav-link i {
+  font-size: 20px;
+  min-width: 28px;
+  text-align: center;
+}
+
+.sidebar-org .link-text {
+  opacity: 0;
+  width: 0;
+  overflow: hidden;
+  display: inline-block;
+  margin-left: 0;
+  transition: opacity 0.25s ease, width 0.25s ease, margin-left 0.25s ease;
+}
+
+.sidebar-org:hover .link-text {
+  opacity: 1;
+  width: auto;
+  margin-left: 10px;
+}
+
+/* Active link */
+.sidebar-org .nav-link.active {
+  background: #f2f2f2;
+  font-weight: 600;
+}
+
+/* Scrollable area */
+.sidebar-org-scroll {
+  height: calc(100vh - 80px);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Scrollbar Organization */
+.sidebar-org-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+.sidebar-org-scroll::-webkit-scrollbar-track {
+  background: #f2f2f2;
+}
+.sidebar-org-scroll::-webkit-scrollbar-thumb {
+  background: #d0d0d0;
+  border-radius: 10px;
+}
+.sidebar-org-scroll::-webkit-scrollbar-thumb:hover {
+  background: #b5b5b5;
+}
+
+.sidebar-org-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #d0d0d0 #f2f2f2;
+}
+
+
+/* ================= Employee Sidebar ================= */
+.sidebar-employee {
+  width: 70px;
+  transition: width 0.25s ease;
+  overflow: hidden;
+  background: #fff;
+  min-height: 100vh;
+  border-right: 1px solid #e5e5e5;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Hover expand */
+.sidebar-employee:hover {
+  width: 230px;
+}
+
+/* Logo */
+.sidebar-employee .sidebar-logo-img {
+  width: 40px;
+  transition: all 0.3s ease;
+}
+
+.sidebar-employee:hover .sidebar-logo-img {
+  width: 120px;
+}
+
+/* Nav Links */
+.sidebar-employee .nav-link {
+  display: flex;
+  align-items: center;
+  padding: 12px 15px;
+  font-size: 15px;
+  white-space: nowrap;
+}
+
+.sidebar-employee .nav-link i {
+  font-size: 20px;
+  min-width: 28px;
+  text-align: center;
+}
+
+.sidebar-employee .link-text {
+  opacity: 0;
+  width: 0;
+  overflow: hidden;
+  display: inline-block;
+  margin-left: 0;
+  transition: opacity 0.25s ease, width 0.25s ease, margin-left 0.25s ease;
+}
+
+.sidebar-employee:hover .link-text {
+  opacity: 1;
+  width: auto;
+  margin-left: 10px;
+}
+
+/* Active link */
+.sidebar-employee .nav-link.active {
+  background: #e8f0ff;
+  font-weight: 600;
+}
+
+/* Scrollable area */
+.sidebar-employee-scroll {
+  height: calc(100vh - 80px);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Scrollbar Employee */
+.sidebar-employee-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+.sidebar-employee-scroll::-webkit-scrollbar-track {
+  background: #f2f2f2;
+}
+.sidebar-employee-scroll::-webkit-scrollbar-thumb {
+  background: #d0d0d0;
+  border-radius: 10px;
+}
+.sidebar-employee-scroll::-webkit-scrollbar-thumb:hover {
+  background: #b5b5b5;
+}
+
+.sidebar-employee-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #d0d0d0 #f2f2f2;
+}
+
+
+
+
+
+
+/* Side Menu Icon */
+
+.sidebar-menu .nav-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 18px;
+  color: #6B7280; /* gray-500 */
+  font-size: 15px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.sidebar-menu .nav-link:hover {
+  color: #374151; /* gray-700 */
+  background: #F3F4F6; /* hover background */
+}
+
+.sidebar-menu .nav-link.active {
+  color: #2563EB !important; /* blue-600 */
+  background: #EFF6FF;        /* Light blue */
+  font-weight: 600;
+}
+
+
+/* SideBar Organization Icons */
+
+
+.sidebar-menu .nav-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 18px;
+  color: #6B7280; /* professional gray */
+  font-size: 15px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.sidebar-menu .nav-link:hover {
+  color: #374151; /* darker hover */
+  background: #F3F4F6;
+}
+
+.sidebar-menu .nav-link.active {
+  color: #2563EB !important;
+  background: #EFF6FF;
+  font-weight: 600;
+}
+
+/* SideBar Employee Icons */
+
+.sidebar-menu .nav-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 18px;
+  color: #6B7280; /* professional gray */
+  font-size: 15px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.sidebar-menu .nav-link:hover {
+  color: #374151; /* darker hover */
+  background: #F3F4F6; /* hover bg */
+}
+
+.sidebar-menu .nav-link.active {
+  color: #2563EB !important; /* blue */
+  background: #EFF6FF;
+  font-weight: 600;
+}
+
+
+
+
+/* ================= App Sidebar (General) ================= */
+
+
+
+/* ==== Base Sidebar ==== */
+.app-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  background: #fff;
+  border-right: 1px solid #ddd;
+  z-index: 1050;
+  width: 70px;              /* collapsed width */
+  transition: all 0.3s ease;
+}
+
+/* ==== Desktop Hover Expand ==== */
+@media (min-width: 992px) {
+  .app-sidebar:hover {
+    width: 230px;
+  }
+}
+
+/* ==== Mobile Slide Drawer ==== */
+@media (max-width: 991px) {
+  .app-sidebar {
+    width: 230px !important;
+    transform: translateX(-100%);
+  }
+
+  .app-sidebar.sidebar-open {
+    transform: translateX(0);
+  }
+}
+
+/* ==== Mobile Overlay (optional but professional) ==== */
+@media (max-width: 991px) {
+  body.sidebar-backdrop::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 1040;
+  }
+}
+
+.app-sidebar:hover {
+   width: 230px;
+}
+
+/* Expand when pinned or programmatically expanded (body class set by JS) */
+body.sidebar-expanded .app-sidebar,
+.app-sidebar.sidebar-pinned {
+  width: 230px;
+}
+
+.app-sidebar.sidebar-pinned .sidebar-admin,
+.app-sidebar.sidebar-pinned .sidebar-org,
+.app-sidebar.sidebar-pinned .sidebar-employee {
+  width: 230px;
+}
+
+.app-sidebar.sidebar-pinned .sidebar-logo-img {
+  width: 120px;
+}
+
+/* Reveal text labels when pinned/expanded */
+.app-sidebar.sidebar-pinned .link-text,
+.app-sidebar.sidebar-pinned .sidebar-text,
+body.sidebar-expanded .app-sidebar .link-text,
+body.sidebar-expanded .app-sidebar .sidebar-text {
+  opacity: 1 !important;
+  width: auto !important;
+  margin-left: 10px !important;
+  display: inline-block !important;
+}
+
+/* Tweak link layout when expanded */
+.app-sidebar.sidebar-pinned .nav-link,
+body.sidebar-expanded .app-sidebar .nav-link {
+  justify-content: flex-start;
+  padding: 12px 18px;
+}
+
+.app-sidebar.sidebar-pinned .nav-link i,
+body.sidebar-expanded .app-sidebar .nav-link i {
+  min-width: 30px;
+  text-align: center;
+  font-size: 20px;
+}
+
+/* Active link — left accent + light blue background like screenshot */
+.app-sidebar.sidebar-pinned .nav-link.active,
+body.sidebar-expanded .app-sidebar .nav-link.active {
+  background: #EFF6FF;
+  color: #2563EB !important;
+  font-weight: 600;
+  border-left: 4px solid #2563EB;
+  padding-left: 14px;
+}
+
+/* Smooth transitions */
+.app-sidebar .link-text,
+.app-sidebar .sidebar-text {
+  transition: opacity 0.2s ease, width 0.2s ease, margin-left 0.2s ease;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Base Sidebar */
+.app-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  background: #fff;
+  border-right: 1px solid #ddd;
+  z-index: 1050;
+  width: 70px;
+  transition: all 0.3s ease;
+  overflow-x: hidden;
+}
+
+/* Close button */
+.sidebar-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  z-index: 2000;
+}
+
+/* Desktop hover expand ONLY */
+@media (min-width: 992px) {
+  .app-sidebar:hover {
+    width: 230px;
+  }
+
+  .sidebar-close-btn {
+    display: none; /* desktop par hide */
+  }
+}
+
+/* Mobile slide sidebar */
+@media (max-width: 991px) {
+  .app-sidebar {
+    width: 230px !important;
+    transform: translateX(-100%);
+  }
+
+  .app-sidebar.sidebar-open {
+    transform: translateX(0);
+  }
+  
+  /* Text show on mobile */
+  .sidebar-text {
+    display: inline-block !important;
+  }
+
+  /* Ensure inner sidebar blocks expand and show labels when drawer is open */
+  .app-sidebar.sidebar-open .sidebar-admin,
+  .app-sidebar.sidebar-open .sidebar-org,
+  .app-sidebar.sidebar-open .sidebar-employee {
+    width: 230px !important;
+  }
+
+  .app-sidebar.sidebar-open .sidebar-admin .sidebar-logo-img,
+  .app-sidebar.sidebar-open .sidebar-org .sidebar-logo-img,
+  .app-sidebar.sidebar-open .sidebar-employee .sidebar-logo-img {
+    width: 120px !important;
+  }
+
+  .app-sidebar.sidebar-open .sidebar-admin .link-text,
+  .app-sidebar.sidebar-open .sidebar-org .link-text,
+  .app-sidebar.sidebar-open .sidebar-employee .link-text {
+    opacity: 1 !important;
+    width: auto !important;
+    margin-left: 10px !important;
+    display: inline-block !important;
+  }
+
+  /* Text show on mobile */
+  .sidebar-text {
+    display: inline-block !important;
+  }
+}
+
+/* Desktop text hidden by default */
+.sidebar-text {
+  display: none;
+}
+
+@media (min-width: 992px) {
+  .app-sidebar:hover .sidebar-text {
+    display: inline-block;
+  }
+}
+
+/* White Space Area Kill */
+
+.sidebar-menu {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  cursor: pointer;
+}
+
+.sidebar-icon {
+  font-size: 20px;
+}
+
+
+/*  */
+
+
+

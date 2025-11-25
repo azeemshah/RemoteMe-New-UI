@@ -1,5 +1,5 @@
 import React from "react";
-import useReactApexChart from "../../hook/useReactApexChart";
+import useReactApexChart from "../../hooks/useReactApexChart";
 import ReactApexChart from "react-apexcharts";
 
 const ExpenseStatistics = () => {

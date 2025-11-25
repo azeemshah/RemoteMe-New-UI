@@ -1,27 +1,34 @@
 import { Icon } from "@iconify/react/dist/iconify.js";
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
+import logo from "../assets/img/ultimate-logo.png";
+import loginImg from "../assets/img/login.jpg";
 
-const SignInLayer = () => {
-  const navigate = useNavigate(); 
+const LoginInLayer = () => {
+  const navigate = useNavigate();
 
   const handleLogin = (e) => {
-    e.preventDefault(); 
-    navigate("/index-11"); 
+    e.preventDefault();
+    navigate("/maindashboard");
   };
 
   return (
     <section className="auth bg-base d-flex flex-wrap">
       <div className="auth-left d-lg-block d-none">
         <div className="d-flex align-items-center flex-column h-100 justify-content-center">
-          <img src="assets/images/auth/auth-img.png" alt="" />
+          <img
+            src={loginImg}
+            alt="Login"
+            className="img-fluid h-100 w-100"
+            style={{ objectFit: "cover" }}
+          />
         </div>
       </div>
       <div className="auth-right py-32 px-24 d-flex flex-column justify-content-center">
         <div className="max-w-464-px mx-auto w-100">
           <div>
             <Link to="/" className="mb-40 max-w-290-px">
-              <img src="assets/images/logo.png" alt="" />
+              <img src={logo} alt="Ultimate Logo" />
             </Link>
             <h4 className="mb-12">Sign In to your Account</h4>
             <p className="mb-32 text-secondary-light text-lg">
@@ -29,10 +36,8 @@ const SignInLayer = () => {
             </p>
           </div>
 
-          {/* FORM START */}
           <form onSubmit={handleLogin}>
             {" "}
-            {/* <-- Updated */}
             <div className="icon-field mb-16">
               <span className="icon top-50 translate-middle-y">
                 <Icon icon="mage:email" />
@@ -63,11 +68,10 @@ const SignInLayer = () => {
               Sign In
             </button>
           </form>
-          {/* FORM END */}
         </div>
       </div>
     </section>
   );
 };
 
-export default SignInLayer;
+export default LoginInLayer;

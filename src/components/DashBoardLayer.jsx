@@ -9,7 +9,7 @@ import QuickTransfer from "./child/QuickTransfer";
 import Investment from "./child/Investment";
 import PaymentHistoryOne from "./child/PaymentHistoryOne";
 
-const DashBoardLayerEleven = () => {
+const DashBoardLayer = () => {
   return (
     <>
       {/* UnitCountEight */}
@@ -53,4 +53,4 @@ const DashBoardLayerEleven = () => {
   );
 };
 
-export default DashBoardLayerEleven;
+export default DashBoardLayer;

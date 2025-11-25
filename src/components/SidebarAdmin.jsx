@@ -1,12 +1,20 @@
 import { useEffect, useState } from "react";
 import { Icon } from "@iconify/react/dist/iconify.js";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import ThemeToggleButton from "../helper/ThemeToggleButton";
+import { useAuth } from "../hooks/useAuth";
 
-const MasterLayout = ({ children }) => {
+const Sidebar = ({ children }) => {
+  const { logout } = useAuth();
+  const navigate = useNavigate();
   let [sidebarActive, seSidebarActive] = useState(false);
   let [mobileMenu, setMobileMenu] = useState(false);
   const location = useLocation(); // Hook to get the current route
+
+  const handleLogout = () => {
+    logout();
+    navigate("/");
+  };
 
   useEffect(() => {
     const handleDropdownClick = (event) => {
@@ -393,13 +401,13 @@ const MasterLayout = ({ children }) => {
                         </Link>
                       </li>
                       <li>
-                        <Link
-                          className="dropdown-item text-black px-0 py-8 hover-bg-transparent hover-text-danger d-flex align-items-center gap-3"
-                          to="#"
+                        <button
+                          onClick={handleLogout}
+                          className="dropdown-item text-black px-0 py-8 hover-bg-transparent hover-text-danger d-flex align-items-center gap-3 border-0 bg-transparent"
                         >
                           <Icon icon="lucide:power" className="icon text-xl" />{" "}
                           Log Out
-                        </Link>
+                        </button>
                       </li>
                     </ul>
                   </div>
@@ -417,4 +425,4 @@ const MasterLayout = ({ children }) => {
   );
 };
 
-export default MasterLayout;
+export default Sidebar;

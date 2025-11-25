@@ -6,11 +6,18 @@ import "react-modal-video/css/modal-video.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import { AuthProvider } from "./contexts/Authcontext";
+import { HelmetProvider } from "react-helmet-async";
+
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <>
-    <App />
+    <AuthProvider>
+      <HelmetProvider>
+        <App />
+      </HelmetProvider>
+    </AuthProvider>
   </>
 );
 

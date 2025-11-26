@@ -151,12 +151,17 @@ function Login() {
                 </span>
                 <input
                   type="email"
-                  className="form-control h-56-px bg-neutral-50 radius-12"
+                  className={`form-control h-56-px bg-neutral-50 radius-12 ${
+                    errors.email ? "is-invalid" : ""
+                  }`}
                   placeholder="Email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
+              {errors.email && (
+                <div className="text-danger text-sm mb-16">{errors.email}</div>
+              )}
 
               <div className="position-relative mb-20">
                 <div className="icon-field" style={{ position: "relative" }}>
@@ -165,7 +170,9 @@ function Login() {
                   </span>
                   <input
                     type={showPass ? "text" : "password"}
-                    className="form-control h-56-px bg-neutral-50 radius-12"
+                    className={`form-control h-56-px bg-neutral-50 radius-12 ${
+                      errors.password ? "is-invalid" : ""
+                    }`}
                     id="your-password"
                     placeholder="Password"
                     value={password}
@@ -190,13 +197,18 @@ function Login() {
                     }}
                   >
                     <Icon
-                      icon={showPass ? "mdi:eye-off" : "mdi:eye"}
+                      icon={showPass ? "mdi:eye" : "mdi:eye-off"}
                       width="20"
                       height="20"
                     />
                   </button>
                 </div>
               </div>
+              {errors.password && (
+                <div className="text-danger text-sm mb-16">
+                  {errors.password}
+                </div>
+              )}
 
               <button
                 type="submit"
